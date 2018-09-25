@@ -1,0 +1,39 @@
+body{
+    background: #f6f6f6;
+}
+.container{
+    background: black;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(50%);
+    width:400px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 #808080;
+}
+.container textarea{
+    width: 380px;
+    height: 100px;
+    resize:none;
+    border: 1px solid #334455;
+}
+.container label{
+    display: block;
+    width: 400px;
+}
+.container label span{
+    width :100px;
+   margin-top: 20px;
+   display: inline-block;
+}
+.container label input{
+    width: 200px;
+
+}
+.button{
+    display: inline-block;
+    margin-top: 20px;
+}
+.button:hover{
+    box-shadow: 4px 4px 10px 0 #124231
+}

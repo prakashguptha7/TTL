@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text To Speech Converter</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+        body{
+    background-image: url("https://cdn.pixabay.com/photo/2018/09/08/09/48/ornament-3662184_960_720.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+        }
+ h1{
+     text-align: center;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-size: 500%;
+ }
+.container{
+    background-image: url("https://cdn.pixabay.com/photo/2018/09/21/15/06/notepad-3693309_960_720.jpg");
+    position: absolute;
+    top:20%;
+    left: 50%;
+    transform:translateX(-50%) translateY(50%);
+    width:400px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 #808080;
+}
+.container textarea{
+    width: 380px;
+    height: 100px;
+    resize:none;
+    border: 1px solid #334455;
+}
+.container label{
+    display: block;
+    width: 400px;
+}
+.container label span{
+    width :100px;
+   margin-top: 20px;
+   display: inline-block;
+}
+.container label input{
+    width: 200px;
+
+}
+.btn btn-warning{
+    display: inline-block;
+    margin-top: 20px;
+}
+.btn btn-warning:hover{
+    box-shadow: 4px 4px 10px 0 #124231
+}
+</style>
+        
+    </head>
+    <body>
+        
+    <h1>TEXT SPEAK OUT APP</h1>
+            
+ 
+        <div class="container">
+            <h3>TEXT TO SPEECH CONVERTER</h3>
+            <textarea id="mytext">Hello,This is prakash</textarea>
+        <label>
+            <span>Volume</span>
+            <input type="range" id="volumeslider" min="0" max="1" value="0.5" step="0.1">
+         </label>
+         <div  type="button" class="btn btn-warning" onclick="speak();">Speak</div>
+        </div>
+ <script type="text/javascript">
+        
+        
+        function checkCompatibility(){
+    if(!('speechSynthesis' in window)){
+        alert("your browser is not supported upgrade it!!")
+    }
+};
+checkCompatibility();
+
+
+var voiceoptions = document.getElementById('voiceoptions');
+var volumeslider = document.getElementById('volumeslider');
+var mytext = document.getElementById('mytext');
+
+function speak(){
+    var msg = new SpeechSynthesisUtterance();
+    msg.volume = volumeslider.value;
+    msg.text = mytext.value;
+    window.speechSynthesis.speak(msg);
+}
+        
+        
+        </script>
+</body>
+</html>
